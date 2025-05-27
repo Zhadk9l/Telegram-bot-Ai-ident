@@ -9,10 +9,14 @@ from aiogram.fsm.state import StatesGroup, State
 from aiogram.client.session.aiohttp import AiohttpSession
 from datetime import datetime, timedelta
 from collections import defaultdict
+from dotenv import load_dotenv
+import os
 
-# Налаштування
-BOT_TOKEN = "7691437662:AAFfjvNMBBf9s91RcJ3XPcW3mZDYtac72Us"
-BASE_URL = "http://127.0.0.1:8000"
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+BASE_URL = os.getenv("BASE_URL")
+
 
 # Стан FSM
 class RegisterUser(StatesGroup):
